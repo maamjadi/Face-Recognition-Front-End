@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.SignUpPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Orientation="Vertical" Padding="30" Spacing="20" Margin="20">
+            <Entry x:Name="EmailEntry" Placeholder="Email" TextColor="Gray" FontFamily="arial" Text="{Binding email}" Keyboard="Email" />
+            <Entry x:Name="PasswordEntry" Placeholder="Password" TextColor="Gray" FontFamily="arial" Text="{Binding password}" IsPassword="true" />
+            <Entry x:Name="VerifyPasswordEntry" Placeholder="Verify Password" TextColor="Gray" FontFamily="arial" Text="{Binding verifyPassword}" IsPassword="true" PlaceholderColor="{Binding validationColor}" TextChanged="check_password" />
+            <Button Margin="0,200,0,0" Text="Create Account" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="CreateAccount" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

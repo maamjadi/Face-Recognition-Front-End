@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.StartPage">
+    <ContentPage.Content>
+          <StackLayout>
+
+   <Button Margin="70,20,70,5" Text="Login"  BackgroundColor="{StaticResource Button}" TextColor="White"
+             VerticalOptions="EndAndExpand" FontSize="20" FontAttributes="Bold" Clicked="GoToLogin"/>
+    <Button Margin="70,5,70,70" Text="SignUp"  BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="GoToSignup" />
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

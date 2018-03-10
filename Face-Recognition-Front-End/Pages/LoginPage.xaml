@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.LoginPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Orientation="Vertical" Padding="30" Spacing="20" Margin="20">
+            <Entry x:Name="EmailEntry" Placeholder="email" TextColor="Gray" FontFamily="Avenir" Text="{Binding email}" Keyboard="Email" />
+            <Entry x:Name="PasswordEntry" Placeholder="password" TextColor="Gray" FontFamily="Avenir" Text="{Binding password}" IsPassword="true" />
+            <Button Margin="70,5,70,70" Text="Login" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="Login" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
