@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{2CB08A94-A8F6-4C24-9CAB-5AF2FA2FB46A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Face-Recognition-Front-End/Pages/LoginPage.xaml.cs">
+    <Files>
+      <File FileName="Face-Recognition-Front-End/App.xaml.cs" Line="10" Column="35" />
+      <File FileName="Face-Recognition-Front-End/Pages/SignUpPage.xaml" Line="11" Column="15" />
+      <File FileName="Face-Recognition-Front-End/Pages/LoginPage.xaml.cs" Line="4" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Face-Recognition-Front-End.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0EF4149A-FDF7-4CDB-AC40-51D64413372A" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

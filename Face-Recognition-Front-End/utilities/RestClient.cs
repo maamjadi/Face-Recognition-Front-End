@@ -17,7 +17,6 @@ namespace FaceRecognitionFrontEnd
         private static StringContent PrepareContent(Object data)
         {
             string json = JsonConvert.SerializeObject(data);
-            System.Diagnostics.Debug.WriteLine(json);
             return new StringContent(json.ToString(), Encoding.UTF8, "application/json");
 
         }
@@ -27,8 +26,6 @@ namespace FaceRecognitionFrontEnd
             request.RequestUri = new Uri(uri + path);
             request.Method = HttpMethod.Post;
             request.Content = PrepareContent(data);
-            System.Diagnostics.Debug.WriteLine(request);
-           
             return await httpClient.SendAsync(request);
         }
     }

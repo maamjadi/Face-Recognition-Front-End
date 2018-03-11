@@ -10,6 +10,7 @@ namespace FaceRecognitionFrontEnd
         public MainPage()
         {
             InitializeComponent();
+            System.Diagnostics.Debug.WriteLine(App.teacherId);
         }
     }
 }

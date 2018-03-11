@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using Xamarin.Forms;
+using Newtonsoft.Json.Linq;
 
 namespace FaceRecognitionFrontEnd
 {
@@ -34,7 +34,10 @@ namespace FaceRecognitionFrontEnd
                 }
                 else if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    await Navigation.PushAsync(new MainPage());
+                    var data = await response.Content.ReadAsStringAsync();
+                    var teacherId = JObject.Parse(data);
+                    App.teacherId = teacherId["teacherId"].ToString();
+                    App.Current.MainPage = new NavigationPage(new MainPage());
                 }
                 else
                 {
