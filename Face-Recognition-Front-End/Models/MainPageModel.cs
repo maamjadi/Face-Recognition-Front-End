@@ -12,91 +12,91 @@ namespace FaceRecognitionFrontEnd
 {
     public class MainPageModel : BasePageModel
 	{
-        public MainPageModel()
-		{
-            ColumnCount = 3;
+        public MainPageModel() 
+        {
+            ReloadData();
+        }
 
-			ItemTappedCommand = new BaseCommand((param) =>
-			{
+        public void ReloadData()
+        {
+            var list = new ObservableCollection<ItemModel>();
 
-				var item = LastTappedItem as SimpleItem;
-				if (item != null)
-					System.Diagnostics.Debug.WriteLine("Tapped {0}", item.Title);
+            string[] subjects = {
+                "Client Side Technologies",
+                "Client Side Technologies",
+                "Client Side Technologies",
+                "Client Side Technologies",
+                "Client Side Technologies",
+                "Client Side Technologies",
+                "Client Side Technologies",
+                "Client Side Technologies",
+                "Client Side Technologies",
+            };
 
-			});
+            int[] percentages = {
+                57,
+                23,
+                24,
+                65,
+                75,
+                34,
+                23,
+                10,
+                90,
+            };
 
-			ScrollToCommand = new BaseCommand((arg) =>
-			{
-                var page = this.GetCurrentPage() as MainPage;
-				page.FlowScrollTo(Items[Items.Count / 2]);
-			});
-
-            ChangeColumnCountCommand = new BaseCommand((arg) =>
+            for (int i = 0; i < subjects.Length; i++)
             {
-                ColumnCount++;
-            });
-		}
+                var item = new ItemModel()
+                {
+                    SubjectName = subjects[i],
+                    Percentage = string.Format("{0}%", percentages[i]),
+                };
 
-		public FlowObservableCollection<object> Items
-		{
-			get { return GetField<FlowObservableCollection<object>>(); }
-			set { SetField(value); }
-		}
+                list.Add(item);
+            }
 
-		public ICommand ScrollToCommand
-		{
-			get { return GetField<ICommand>(); }
-			set { SetField(value); }
-		}
+            list.Add(addCreateNewSubjectBtn());
 
-		public ICommand ChangeColumnCountCommand
-		{
-			get { return GetField<ICommand>(); }
-			set { SetField(value); }
-		}
+            Items = list;
+        }
 
-		public void ReloadData()
-		{
-            var exampleData = new List<object>();
+        private ItemModel addCreateNewSubjectBtn() {
+            var item = new ItemModel()
+            {
+                Add = "+",
+            };
+            return item;
+        }
 
-			var howMany = 120;
+        public ObservableCollection<ItemModel> Items
+        {
+            get { return GetField<ObservableCollection<ItemModel>>(); }
+            set { SetField(value); }
+        }
 
-			for (int i = 0; i < howMany; i++)
-			{
-				exampleData.Add(new SimpleItem() { Title = string.Format("Item nr {0}", i) });
-			}
+        public class ItemModel : BaseModel
+        {
+            string subjectName;
+            public string SubjectName
+            {
+                get { return subjectName; }
+                set { SetField(ref subjectName, value); }
+            }
 
-            Items = new FlowObservableCollection<object>(exampleData);
-		}
+            string percentage;
+            public string Percentage
+            {
+                get { return percentage; }
+                set { SetField(ref percentage, value); }
+            }
 
-        public int? ColumnCount
-		{
-			get { return GetField<int?>(); }
-			set { SetField(value); }
-		}
-
-		public ICommand ItemTappedCommand
-		{
-			get { return GetField<ICommand>(); }
-			set { SetField(value); }
-		}
-
-		public object LastTappedItem
-		{
-			get { return GetField<object>(); }
-			set { SetField(value); }
-		}
-
-		public class SimpleItem : BaseModel
-		{
-			string title;
-			public string Title
-			{
-				get { return title; }
-				set { SetField(ref title, value); }
-			}
-
-            public Color Color { get; private set; } = Color.FromHex("B66A6A");
-		}
-	}
+            string add;
+            public string Add
+            {
+                get { return add; }
+                set { SetField(ref add, value); }
+            }
+        }
+    }
 }

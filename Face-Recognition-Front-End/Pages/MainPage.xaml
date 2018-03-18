@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.MainPage"
+        xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:pagefactory="clr-namespace:Xamvvm;assembly=Xamvvm.Forms"
+             Title="Subjects">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Command="{Binding Logout}" Priority="0" Order="Primary"></ToolbarItem>
+        <ToolbarItem Text="Settings" Command="{Binding Settings}" Priority="1" Order="Primary"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
+
+        <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true"
+            FlowItemTappedCommand="{Binding ItemTappedCommand}" FlowLastTappedItem="{Binding LastTappedItem}"
+            FlowColumnMinWidth="160" FlowItemsSource="{Binding Items}"
+            SelectedItem="{Binding SelectedItem, Mode=TwoWay}" ItemsSource="{Binding Items}">
+
+            <flv:FlowListView.Behaviors>
+                <pagefactory:BaseEventToCommandBehavior EventName="ItemSelected" Command="{Binding ItemSelectedCommand}"/>
+            </flv:FlowListView.Behaviors>
+
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                     <!--<Border BorderThickness="3" BorderBrush="Yellow" CornerRadius="10" Padding="2"
+        HorizontalAlignment="Center" VerticalAlignment="Center">-->
+                    <Grid Padding="20">
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        
+                        <Label BackgroundColor="#B66A6A" HeightRequest="150" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Fill" VerticalTextAlignment="Center"
+                               TextColor="White" FontSize="24" Text="{Binding SubjectName}"/>
+                        
+                        <Label HeightRequest="150" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Fill" VerticalTextAlignment="Center"
+                               TextColor="White" FontSize="48" Text="{Binding Add}"/>
+
+                        <Label TextColor="White" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End"
+                               BackgroundColor="Black" Opacity="0.5" Text="{Binding Percentage}">
+                            <!--<Label.BackgroundColor>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop x:Name="gradientStop1" Color="Black" Opacity="0.0" Offset="0.2"/>
+                                    <GradientStop x:Name="gradientStop2" Color="Black" Opacity="0.5" Offset="0.5"/>
+                                    <GradientStop x:Name="gradientStop3" Color="Black" Opacity="0.0" Offset="0.8"/>
+                                </LinearGradientBrush>
+                            </Label.BackgroundColor>-->
+                        </Label>
+                    </Grid>
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+        
+        </flv:FlowListView>
+        
     </ContentPage.Content>
 </ContentPage>

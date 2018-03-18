@@ -2,10 +2,9 @@
 using Xamarin.Forms;
 using Xamvvm;
 
-namespace DLToolkitControlsSamples
+namespace FaceRecognitionFrontEnd
 {
 	public class MainNavigationPageModel : BasePageModel
 	{
-
 	}
 }

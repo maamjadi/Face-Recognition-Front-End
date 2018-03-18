@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using Xamvvm;
 
-namespace DLToolkitControlsSamples
+namespace FaceRecognitionFrontEnd
 {
 	public class SimpleGalleryPageModel : BasePageModel
 	{
