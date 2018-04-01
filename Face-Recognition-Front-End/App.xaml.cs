@@ -1,5 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using DLToolkit.Forms.Controls;
+using Xamarin.Forms;
+using Xamvvm;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace FaceRecognitionFrontEnd
 {
     public partial class App : Application
@@ -9,7 +13,13 @@ namespace FaceRecognitionFrontEnd
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new StartPage());
+            FlowListView.Init();
+
+            var factory = new XamvvmFormsFactory(this);
+            factory.RegisterNavigationPage<MainNavigationPageModel>(() => this.GetPageAsNewInstance<MainPageModel>());
+            XamvvmCore.SetCurrentFactory(factory);
+            MainPage = this.GetPageFromCache<MainPageModel>() as Page;
+            //MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
