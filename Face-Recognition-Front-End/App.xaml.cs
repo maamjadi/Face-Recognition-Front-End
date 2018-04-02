@@ -18,8 +18,8 @@ namespace FaceRecognitionFrontEnd
             var factory = new XamvvmFormsFactory(this);
             factory.RegisterNavigationPage<MainNavigationPageModel>(() => this.GetPageAsNewInstance<MainPageModel>());
             XamvvmCore.SetCurrentFactory(factory);
-            MainPage = this.GetPageFromCache<MainPageModel>() as Page;
-            //MainPage = new NavigationPage(new MainPage());
+            //MainPage = this.GetPageFromCache<MainPageModel>() as Page;
+            MainPage = new NavigationPage(new AddSubject());
         }
 
         protected override void OnStart()

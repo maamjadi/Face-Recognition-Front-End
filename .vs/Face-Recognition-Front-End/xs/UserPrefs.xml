@@ -1,21 +1,20 @@
 ﻿<Properties StartupConfiguration="{2CB08A94-A8F6-4C24-9CAB-5AF2FA2FB46A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Face-Recognition-Front-End/Pages/MainPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Face-Recognition-Front-End/Pages/AddSubject.xaml.cs">
     <Files>
-      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml.cs" Line="17" Column="1" />
-      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml" Line="21" Column="42" />
-      <File FileName="Face-Recognition-Front-End/Models/MainPageModel.cs" Line="13" Column="47" />
-      <File FileName="Face-Recognition-Front-End/App.xaml.cs" Line="26" Column="10" />
-      <File FileName="iOS/MainPageRenderer.cs" Line="33" Column="41" />
-      <File FileName="Face-Recognition-Front-End/MainNavigationPageModel.cs" Line="5" Column="34" />
-      <File FileName="../../../../Desktop/DLToolkit.Forms.Controls/Samples/DLToolkitControlsSamples/App.xaml.cs" Line="17" Column="4" />
-      <File FileName="../../../../Desktop/DLToolkit.Forms.Controls/Samples/DLToolkitControlsSamples/MainPage.xaml" Line="8" Column="5" />
+      <File FileName="Face-Recognition-Front-End/App.xaml.cs" Line="14" Column="26" />
+      <File FileName="Face-Recognition-Front-End/Pages/AddSubject.xaml.cs" Line="12" Column="39" />
+      <File FileName="Face-Recognition-Front-End/Pages/AddStudent.xaml" Line="7" Column="172" />
+      <File FileName="Face-Recognition-Front-End/Pages/AddStudent.xaml.cs" Line="7" Column="2" />
+      <File FileName="Face-Recognition-Front-End/Pages/StudentPage.xaml" Line="14" Column="1" />
+      <File FileName="Face-Recognition-Front-End/Pages/StudentPage.xaml.cs" Line="10" Column="29" />
+      <File FileName="Face-Recognition-Front-End/Pages/SignUpPage.xaml.cs" Line="32" Column="76" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Face-Recognition-Front-End.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.953E59E9-7E6A-4175-BCDE-E6D4ECC4EDF1" />
+  <MonoDevelop.Ide.ItemProperties.Face-Recognition-Front-End.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0EF4149A-FDF7-4CDB-AC40-51D64413372A" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Face-Recognition-Front-End.Droid AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
