@@ -5,7 +5,7 @@
             <Entry x:Name="SubjectNameEntry" Placeholder="Subject Name" TextColor="Gray" FontFamily="arial" Text="{Binding subjectName}" />
             <Entry x:Name="numberOfSessionsEntry" Placeholder="Number Of Sessions" TextColor="Gray" FontFamily="arial" Text="{Binding numberOfSessions}" IsPassword="true" />
 <!--            <Button Text="Students" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="AddSubject" />
--->            <Button Margin="0,200,0,0" Text="Add" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="AddSubject" />
+-->            <Button Margin="0,200,0,0" Text="Add" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="AddNewSubject" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

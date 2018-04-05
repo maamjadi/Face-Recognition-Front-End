@@ -8,7 +8,7 @@ namespace FaceRecognitionFrontEnd
 {
     public partial class SignUpPage : ContentPage
     {
-        public const string path = "/teacher";
+        public const string path = "/teachers";
         public string email { get; set; }
         public string password { get; set; }
         public string verifyPassword { get; set; }
@@ -69,7 +69,6 @@ namespace FaceRecognitionFrontEnd
                 return false;
             }
             return true;
-
         }
         private void DisplayErrorAlert(string message)
         {
