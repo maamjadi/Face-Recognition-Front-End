@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.MainPage"
              xmlns:converters="using:FaceRecognitionFrontEnd.Converters"
-             xmlns:vm="using:FaceRecognitionFrontEnd.ViewModels"
+             xmlns:vm="using:FaceRecognitionFrontEnd"
              Title="Subjects">
 
-    <Page.Resources>
+   <!-- <Page.Resources>
     <Color x:Key="SelectedColor">Gray</Color>
     <Color x:Key="UnselectedColor">Pink</Color>
     <converters:BoolToColorConverter x:Key="BoolToColorConverter"/> 
         <vm:MainPageModel x:Key="mainPageModel"/>
-    </Page.Resources>
+    </Page.Resources>-->
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Logout" Command="{Binding Logout}" Priority="0" Order="Primary"></ToolbarItem>
@@ -19,7 +19,7 @@
     <ContentPage.Content>
                      <!--<Frame BorderThickness="3" BorderBrush="Yellow" CornerRadius="10" Padding="2"
         HorizontalAlignment="Center" VerticnnalAlignment="Center">-->
-                    <Grid Padding="20" BindingContext="{Binding Source={StaticResource mainPageModel}}">
+                   <!-- <Grid Padding="20" BindingContext="{Binding Source={StaticResource mainPageModel}}">
                         
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
@@ -41,7 +41,7 @@
                                TextColor="White" FontSize="48" Text="{Binding Add, Mode=TwoWay}"/>
 
                         <Label TextColor="White" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End"
-                               BackgroundColor="Black" Opacity="0.5" Text="{Binding Percentage, Mode=TwoWay}">
+                               BackgroundColor="Black" Opacity="0.5" Text="{Binding Percentage, Mode=TwoWay}">-->
                             <!--<Label.BackgroundColor>
                                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                                     <GradientStop x:Name="gradientStop1" Color="Black" Opacity="0.0" Offset="0.2"/>
@@ -49,12 +49,12 @@
                                     <GradientStop x:Name="gradientStop3" Color="Black" Opacity="0.0" Offset="0.8"/>
                                 </LinearGradientBrush>
                             </Label.BackgroundColor>-->
-                        </Label>
+                       <!-- </Label>
                 <StackLayout.GestureRecognizers>
     <TapGestureRecognizer Command="{Binding ToggleCommand}" />
-  </StackLayout.GestureRecognizers>
+  </StackLayout.GestureRecognizers>-->
   <!--Triggers will update background color when update IsSelected-->
-  <StackLayout.Triggers>
+<!--  <StackLayout.Triggers>
     <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="True">
       <Setter Property="BackgroundColor" Value="{StaticResource SelectedColor}" />
     </DataTrigger>
@@ -62,7 +62,7 @@
 
                 </StackLayout>
             
-                    </Grid>
+                    </Grid>-->
                         <!--</Frame>-->
         
     </ContentPage.Content>
