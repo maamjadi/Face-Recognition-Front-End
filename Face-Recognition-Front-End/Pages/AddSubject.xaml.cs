@@ -55,6 +55,12 @@ namespace FaceRecognitionFrontEnd
             }
 
         }
+        async void GoToStudentPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StudentPage());
+
+
+        }
         private void DisplayErrorAlert(string message)
         {
             DisplayAlert("Alert", message, "OK");

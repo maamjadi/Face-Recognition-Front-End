@@ -6,12 +6,12 @@ using Newtonsoft.Json.Linq;
 
 namespace FaceRecognitionFrontEnd
 {
-    public partial class StudentPage : ContentPage
+    public partial class RegisterStudent : ContentPage
     {
         public const string path = "/students";
         public string userName { get; set; }
 
-        public StudentPage()
+        public RegisterStudent()
         {
             InitializeComponent();
             BindingContext = this;
