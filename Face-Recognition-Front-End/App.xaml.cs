@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamvvm;
 using Xamarin.Forms.Xaml;
-
+    
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace FaceRecognitionFrontEnd
 {
@@ -19,7 +19,9 @@ namespace FaceRecognitionFrontEnd
             factory.RegisterNavigationPage<MainNavigationPageModel>(() => this.GetPageAsNewInstance<MainPageModel>());
             XamvvmCore.SetCurrentFactory(factory);
             //MainPage = this.GetPageFromCache<MainPageModel>() as Page;
-            MainPage = new NavigationPage(new AddSubject());
+            //MainPage = new NavigationPage(new AddSubject());
+            MainPage = new NavigationPage(new MainPage());
+
         }
 
         protected override void OnStart()
