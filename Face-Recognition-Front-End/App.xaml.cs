@@ -15,11 +15,6 @@ namespace FaceRecognitionFrontEnd
 
             FlowListView.Init();
 
-            var factory = new XamvvmFormsFactory(this);
-            factory.RegisterNavigationPage<MainNavigationPageModel>(() => this.GetPageAsNewInstance<MainPageModel>());
-            XamvvmCore.SetCurrentFactory(factory);
-            //MainPage = this.GetPageFromCache<MainPageModel>() as Page;
-            //MainPage = new NavigationPage(new AddSubject());
             MainPage = new NavigationPage(new MainPage());
 
         }
