@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.MainPage"
-        xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
-             xmlns:pagefactory="clr-namespace:Xamvvm;assembly=Xamvvm.Forms"
+             xmlns:converters="using:FaceRecognitionFrontEnd.Converters"
+             xmlns:vm="using:FaceRecognitionFrontEnd.ViewModels"
              Title="Subjects">
+
+    <Page.Resources>
+    <Color x:Key="SelectedColor">Gray</Color>
+    <Color x:Key="UnselectedColor">Pink</Color>
+    <converters:BoolToColorConverter x:Key="BoolToColorConverter"/> 
+        <vm:MainPageModel x:Key="mainPageModel"/>
+    </Page.Resources>
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Logout" Command="{Binding Logout}" Priority="0" Order="Primary"></ToolbarItem>
@@ -10,38 +17,31 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-
-        <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true"
-            FlowItemTappedCommand="{Binding ItemTappedCommand}" FlowLastTappedItem="{Binding LastTappedItem}"
-            FlowColumnMinWidth="160" FlowItemsSource="{Binding Items}"
-            SelectedItem="{Binding SelectedItem, Mode=TwoWay}" ItemsSource="{Binding Items}">
-
-            <flv:FlowListView.Behaviors>
-                <pagefactory:BaseEventToCommandBehavior EventName="ItemSelected" Command="{Binding ItemSelectedCommand}"/>
-            </flv:FlowListView.Behaviors>
-
-            <flv:FlowListView.FlowColumnTemplate>
-                <DataTemplate>
-                     <!--<Border BorderThickness="3" BorderBrush="Yellow" CornerRadius="10" Padding="2"
-        HorizontalAlignment="Center" VerticalAlignment="Center">-->
-                    <Grid Padding="20">
+                     <!--<Frame BorderThickness="3" BorderBrush="Yellow" CornerRadius="10" Padding="2"
+        HorizontalAlignment="Center" VerticnnalAlignment="Center">-->
+                    <Grid Padding="20" BindingContext="{Binding Source={StaticResource mainPageModel}}">
                         
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        
+            <StackLayout Grid.Row="0"
+               Grid.Column="0"
+               BindingContext="{Binding Path=Items[0]}"
+               Orientation="Vertical"
+               BackgroundColor="{Binding IsSelected,Converter={StaticResource BoolToColorConverter}}">
+
                         <Label BackgroundColor="#B66A6A" HeightRequest="150" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Fill" VerticalTextAlignment="Center"
-                               TextColor="White" FontSize="24" Text="{Binding SubjectName}"/>
+                               TextColor="White" FontSize="24" Text="{Binding SubjectName, Mode=TwoWay}"/>
                         
                         <Label HeightRequest="150" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Fill" VerticalTextAlignment="Center"
-                               TextColor="White" FontSize="48" Text="{Binding Add}"/>
+                               TextColor="White" FontSize="48" Text="{Binding Add, Mode=TwoWay}"/>
 
                         <Label TextColor="White" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End"
-                               BackgroundColor="Black" Opacity="0.5" Text="{Binding Percentage}">
+                               BackgroundColor="Black" Opacity="0.5" Text="{Binding Percentage, Mode=TwoWay}">
                             <!--<Label.BackgroundColor>
                                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                                     <GradientStop x:Name="gradientStop1" Color="Black" Opacity="0.0" Offset="0.2"/>
@@ -50,11 +50,20 @@
                                 </LinearGradientBrush>
                             </Label.BackgroundColor>-->
                         </Label>
+                <StackLayout.GestureRecognizers>
+    <TapGestureRecognizer Command="{Binding ToggleCommand}" />
+  </StackLayout.GestureRecognizers>
+  <!--Triggers will update background color when update IsSelected-->
+  <StackLayout.Triggers>
+    <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="True">
+      <Setter Property="BackgroundColor" Value="{StaticResource SelectedColor}" />
+    </DataTrigger>
+  </StackLayout.Triggers>
+
+                </StackLayout>
+            
                     </Grid>
-                </DataTemplate>
-            </flv:FlowListView.FlowColumnTemplate>
-        
-        </flv:FlowListView>
+                        <!--</Frame>-->
         
     </ContentPage.Content>
 </ContentPage>

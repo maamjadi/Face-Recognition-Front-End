@@ -7,17 +7,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using DLToolkit.Forms.Controls;
 using System.Collections.Generic;
+using System.ComponentModel;
+using FaceRecognitionFrontEnd.Models;
 
-namespace FaceRecognitionFrontEnd
+namespace FaceRecognitionFrontEnd.ViewModels
 {
-    public class MainPageModel : BasePageModel
-	{
-        public MainPageModel() 
+    public class MainPageModel : INotifyPropertyChanged
+    {
+        private ObservableCollection<ItemModel> items;
+        public ObservableCollection<ItemModel> Items
         {
-            ReloadData();
+            get { return items;  }
+            set
+            {
+                items = value;
+                OnPropertyChanged("Items");
+            }
         }
 
-        public void ReloadData()
+        public MainPageModel() 
         {
             var list = new ObservableCollection<ItemModel>();
 
@@ -61,7 +69,8 @@ namespace FaceRecognitionFrontEnd
             Items = list;
         }
 
-        private ItemModel addCreateNewSubjectBtn() {
+        private ItemModel addCreateNewSubjectBtn()
+        {
             var item = new ItemModel()
             {
                 Add = "+",
@@ -69,34 +78,12 @@ namespace FaceRecognitionFrontEnd
             return item;
         }
 
-        public ObservableCollection<ItemModel> Items
+        private void OnPropertyChanged(string propertyName)
         {
-            get { return GetField<ObservableCollection<ItemModel>>(); }
-            set { SetField(value); }
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public class ItemModel : BaseModel
-        {
-            string subjectName;
-            public string SubjectName
-            {
-                get { return subjectName; }
-                set { SetField(ref subjectName, value); }
-            }
-
-            string percentage;
-            public string Percentage
-            {
-                get { return percentage; }
-                set { SetField(ref percentage, value); }
-            }
-
-            string add;
-            public string Add
-            {
-                get { return add; }
-                set { SetField(ref add, value); }
-            }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
