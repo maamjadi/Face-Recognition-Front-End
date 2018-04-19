@@ -5,9 +5,9 @@
              <Entry x:Name="UserNameEntry" Placeholder="User Name" TextColor="Gray" FontFamily="arial" Text="{Binding userName}" />
 
              <StackLayout VerticalOptions="Center" Orientation="Vertical" Padding="0" Spacing="10" Margin="0">
-             <Label  TextColor="{StaticResource Button}" FontSize = "15" Text="Never registered before?" />      
+             <Label x:Name="NewStudentLabel" TextColor="{StaticResource Button}" FontSize = "15" Text="Never registered before?"/>      
            </StackLayout>
-            <Button Margin="0,200,0,0" Text="Done" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="AddStudent" />
+            <Button Margin="0,200,0,0" Text="Check" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="AddStudent" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

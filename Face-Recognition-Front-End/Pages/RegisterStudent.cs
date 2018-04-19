@@ -3,7 +3,6 @@ using System.Net;
 using Xamarin.Forms;
 using Newtonsoft.Json.Linq;
 
-
 namespace FaceRecognitionFrontEnd
 {
     public partial class RegisterStudent : ContentPage
@@ -15,7 +14,14 @@ namespace FaceRecognitionFrontEnd
         {
             InitializeComponent();
             BindingContext = this;
+            var newStudent_tap = new TapGestureRecognizer();
+            newStudent_tap.Tapped += (s, e) =>
+            {
+                Navigation.PushAsync(new AddStudent());
+            };
+            NewStudentLabel.GestureRecognizers.Add(newStudent_tap);
         }
+
         async void AddStudent(object sender, EventArgs e)
         {
             try

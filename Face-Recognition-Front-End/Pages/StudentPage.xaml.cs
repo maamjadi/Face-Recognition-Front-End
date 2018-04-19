@@ -13,7 +13,7 @@ namespace FaceRecognitionFrontEnd
         }
         async void addStudent(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddStudent());
+            await Navigation.PushAsync(new  RegisterStudent());
         }
     }
 }
