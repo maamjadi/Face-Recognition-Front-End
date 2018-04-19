@@ -7,7 +7,7 @@ namespace FaceRecognitionFrontEnd
 {
     public partial class LoginPage : ContentPage
     {
-        public const string path = "/teacher";
+        public const string path = "/teachers";
         public string email { get; set; }
         public string password { get; set; }
 

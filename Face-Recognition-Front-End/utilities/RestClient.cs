@@ -28,5 +28,12 @@ namespace FaceRecognitionFrontEnd
             request.Content = PrepareContent(data);
             return await httpClient.SendAsync(request);
         }
+        public static async Task<HttpResponseMessage> Get(string path)
+        {
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri(uri + path);
+            request.Method = HttpMethod.Get;
+            return await httpClient.SendAsync(request);
+        }
     }
 }

@@ -50,6 +50,19 @@ namespace FaceRecognitionFrontEnd
                 return true;
             }
         }
+        public static bool IsNumric(Entry entry, string value)
+        {
+            if (!int.TryParse("123", out int n))
+            {
+                entry.PlaceholderColor = validationColor;
+                return false;
+            }
+            else
+            {
+                entry.PlaceholderColor = correctionColor;
+                return true;
+            }
+        }
 
     }
 }

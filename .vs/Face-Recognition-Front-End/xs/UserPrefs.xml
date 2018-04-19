@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{2CB08A94-A8F6-4C24-9CAB-5AF2FA2FB46A}|Default">
+<Properties StartupConfiguration="{2CB08A94-A8F6-4C24-9CAB-5AF2FA2FB46A}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Face-Recognition-Front-End/Pages/MainPage.xaml">
     <Files>
       <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml" Line="70" Column="1" />
