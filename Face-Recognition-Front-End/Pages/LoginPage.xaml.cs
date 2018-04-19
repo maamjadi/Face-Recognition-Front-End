@@ -7,7 +7,7 @@ namespace FaceRecognitionFrontEnd
 {
     public partial class LoginPage : ContentPage
     {
-        public const string path = "/teachers";
+        public const string path = "/teacher";
         public string email { get; set; }
         public string password { get; set; }
 
@@ -22,9 +22,9 @@ namespace FaceRecognitionFrontEnd
             //{
             //    return;
             //}
-            //Teacher teacher = new Teacher();
-            //teacher.Email = email;
-            //teacher.Password = password;
+            Teacher teacher = new Teacher();
+            teacher.Email = email;
+            teacher.Password = password;
             try
             {
                 
@@ -35,10 +35,10 @@ namespace FaceRecognitionFrontEnd
                 //}
                 //else if (response.StatusCode == HttpStatusCode.OK)
                 //{
-                //    var data = await response.Content.ReadAsStringAsync();
-                //    var teacherId = JObject.Parse(data);
-                //    App.teacherId = teacherId["teacherId"].ToString();
-                //    App.Current.MainPage = new NavigationPage(new MainPage());
+                    //var data = await response.Content.ReadAsStringAsync();
+                    //var teacherId = JObject.Parse(data);
+                    //App.teacherId = teacherId["teacherId"].ToString();
+                    App.Current.MainPage = new NavigationPage(new MainPage());
                 //}
                 //else
                 //{

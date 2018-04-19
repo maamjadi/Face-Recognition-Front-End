@@ -13,8 +13,8 @@ namespace FaceRecognitionFrontEnd
            System.Diagnostics.Debug.WriteLine(App.teacherId);
         }
 
-        //async void NavigateToSettings(object sender, EventArgs e) {
-        //    App.Current.MainPage = new NavigationPage(new LoginPage());
-        //}
+        async void addSubject(object sender, EventArgs e) {
+            await Navigation.PushAsync(new AddSubject());
+        }
     }
 }

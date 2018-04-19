@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamvvm;
 using Xamarin.Forms.Xaml;
-    
+
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace FaceRecognitionFrontEnd
 {
@@ -13,7 +13,7 @@ namespace FaceRecognitionFrontEnd
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new StartPage());
         }
 
         protected override void OnStart()
