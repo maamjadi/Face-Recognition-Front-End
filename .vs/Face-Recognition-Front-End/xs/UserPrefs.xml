@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{2CB08A94-A8F6-4C24-9CAB-5AF2FA2FB46A}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Face-Recognition-Front-End/Pages/StudentPage.xaml.cs">
     <Files>
-      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml" Line="20" Column="70" />
+      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml" Line="20" Column="28" />
       <File FileName="Face-Recognition-Front-End/Face-Recognition-Front-EndPage.xaml" Line="5" Column="1" />
       <File FileName="Face-Recognition-Front-End/App.xaml" Line="10" Column="1" />
       <File FileName="Face-Recognition-Front-End/App.xaml.cs" Line="16" Column="56" />
       <File FileName="Face-Recognition-Front-End/Pages/LoginPage.xaml" Line="7" Column="27" />
-      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml.cs" Line="11" Column="10" />
+      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml.cs" Line="18" Column="10" />
       <File FileName="Face-Recognition-Front-End/Pages/LoginPage.xaml.cs" Line="41" Column="62" />
-      <File FileName="Face-Recognition-Front-End/Pages/AddSubject.xaml.cs" Line="1" Column="1" />
-      <File FileName="Face-Recognition-Front-End/Pages/RegisterStudent.xaml" Line="2" Column="148" />
-      <File FileName="Face-Recognition-Front-End/Pages/AddSubject.xaml" Line="2" Column="158" />
-      <File FileName="Face-Recognition-Front-End/Pages/RegisterStudent.cs" Line="9" Column="41" />
-      <File FileName="Face-Recognition-Front-End/Pages/StudentPage.xaml" Line="6" Column="1" />
-      <File FileName="Face-Recognition-Front-End/Pages/StudentPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Face-Recognition-Front-End/Pages/AddStudent.xaml" Line="5" Column="26" />
+      <File FileName="Face-Recognition-Front-End/Pages/AddStudent.xaml.cs" Line="1" Column="1" />
+      <File FileName="Face-Recognition-Front-End/Pages/AddSubject.xaml" Line="12" Column="1" />
+      <File FileName="Face-Recognition-Front-End/Pages/AddSubject.xaml.cs" Line="60" Column="59" />
+      <File FileName="Face-Recognition-Front-End/Pages/StudentPage.xaml" Line="4" Column="195" />
+      <File FileName="Face-Recognition-Front-End/Pages/StudentPage.xaml.cs" Line="13" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

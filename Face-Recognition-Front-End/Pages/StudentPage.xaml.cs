@@ -11,5 +11,9 @@ namespace FaceRecognitionFrontEnd
         {
             InitializeComponent();
         }
+        async void addStudent(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddStudent());
+        }
     }
 }
