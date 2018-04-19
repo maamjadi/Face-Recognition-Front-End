@@ -13,14 +13,7 @@ namespace FaceRecognitionFrontEnd
         {
             InitializeComponent();
 
-<<<<<<< HEAD
             MainPage = new NavigationPage(new MainPage());
-=======
-            FlowListView.Init();
-
-            MainPage = new NavigationPage(new MainPage());
-
->>>>>>> adding_subjects
         }
 
         protected override void OnStart()
