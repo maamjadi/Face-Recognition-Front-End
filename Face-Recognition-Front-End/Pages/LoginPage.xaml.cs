@@ -18,31 +18,32 @@ namespace FaceRecognitionFrontEnd
         }
         async void Login(object sender, EventArgs e)
         {
-            if (!CheckEntries())
-            {
-                return;
-            }
-            Teacher teacher = new Teacher();
-            teacher.Email = email;
-            teacher.Password = password;
+            //if (!CheckEntries())
+            //{
+            //    return;
+            //}
+            //Teacher teacher = new Teacher();
+            //teacher.Email = email;
+            //teacher.Password = password;
             try
             {
-                var response = await RestClient.Post(path + "/login", teacher);
-                if (response.StatusCode == HttpStatusCode.BadRequest)
-                {
-                    DisplayErrorAlert("Wrong email or password");
-                }
-                else if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    var data = await response.Content.ReadAsStringAsync();
-                    var teacherId = JObject.Parse(data);
-                    App.teacherId = teacherId["teacherId"].ToString();
-                    App.Current.MainPage = new NavigationPage(new MainPage());
-                }
-                else
-                {
-                    DisplayErrorAlert("Something went wrong!");
-                }
+                
+                //var response = await RestClient.Post(path + "/login", teacher);
+                //if (response.StatusCode == HttpStatusCode.BadRequest)
+                //{
+                //    DisplayErrorAlert("Wrong email or password");
+                //}
+                //else if (response.StatusCode == HttpStatusCode.OK)
+                //{
+                //    var data = await response.Content.ReadAsStringAsync();
+                //    var teacherId = JObject.Parse(data);
+                //    App.teacherId = teacherId["teacherId"].ToString();
+                //    App.Current.MainPage = new NavigationPage(new MainPage());
+                //}
+                //else
+                //{
+                //    DisplayErrorAlert("Something went wrong!");
+                //}
             }
             catch (Exception ex)
             {

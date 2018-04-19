@@ -91,7 +91,6 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="utilities\ValidationService.cs" />
-    <Compile Include="Models\MainPageModel.cs" />
     <Compile Include="MainNavigationPageModel.cs" />
     <Compile Include="Pages\AddSubject.xaml.cs">
       <DependentUpon>AddSubject.xaml</DependentUpon>
@@ -102,6 +101,7 @@
     <Compile Include="Pages\StudentPage.xaml.cs">
       <DependentUpon>StudentPage.xaml</DependentUpon>
     </Compile>
+
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -137,6 +137,8 @@
     <Folder Include="Services\" />
     <Folder Include="Pages\" />
     <Folder Include="utilities\" />
+    <Folder Include="Converters\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

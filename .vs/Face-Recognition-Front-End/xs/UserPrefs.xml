@@ -1,16 +1,16 @@
 <Properties StartupConfiguration="{2CB08A94-A8F6-4C24-9CAB-5AF2FA2FB46A}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Face-Recognition-Front-End/Pages/MainPage.xaml">
     <Files>
-        <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml" Line="70" Column="1" />
-        <File FileName="Face-Recognition-Front-End/ViewModels/MainPageModel.cs" Line="69" Column="18" />
-        <File FileName="Face-Recognition-Front-End/Models/ItemModel.cs" Line="56" Column="39" />
-        <File FileName="Face-Recognition-Front-End/Face-Recognition-Front-EndPage.xaml" Line="5" Column="1" />
-        <File FileName="Face-Recognition-Front-End/App.xaml" Line="10" Column="1" />
-        <File FileName="Face-Recognition-Front-End/App.xaml.cs" Line="16" Column="13" />
-        <File FileName="Face-Recognition-Front-End/Pages/LoginPage.xaml" Line="10" Column="15" />
-        <File FileName="Face-Recognition-Front-End/Pages/LoginPage.xaml.cs" Line="8" Column="49" />
-        <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml.cs" Line="12" Column="1" />
-        <File FileName="Face-Recognition-Front-End/Converters/BoolToColorConverter.cs" Line="5" Column="11" />
+      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml" Line="70" Column="1" />
+      <File FileName="Face-Recognition-Front-End/ViewModels/MainPageModel.cs" Line="69" Column="18" />
+      <File FileName="Face-Recognition-Front-End/Models/ItemModel.cs" Line="56" Column="39" />
+      <File FileName="Face-Recognition-Front-End/Face-Recognition-Front-EndPage.xaml" Line="5" Column="1" />
+      <File FileName="Face-Recognition-Front-End/App.xaml" Line="10" Column="1" />
+      <File FileName="Face-Recognition-Front-End/App.xaml.cs" Line="16" Column="13" />
+      <File FileName="Face-Recognition-Front-End/Pages/LoginPage.xaml" Line="10" Column="15" />
+      <File FileName="Face-Recognition-Front-End/Pages/LoginPage.xaml.cs" Line="8" Column="49" />
+      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml.cs" Line="12" Column="1" />
+      <File FileName="Face-Recognition-Front-End/Converters/BoolToColorConverter.cs" Line="5" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
