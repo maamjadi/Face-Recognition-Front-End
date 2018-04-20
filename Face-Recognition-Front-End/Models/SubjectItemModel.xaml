@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.Models.SubjectItemModel">
+    <Label BackgroundColor="#B66A6A" HeightRequest="150" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Fill" VerticalTextAlignment="Center"
+                               TextColor="White" FontSize="24" Text="{Binding SubjectName, Mode=TwoWay}"/>
+                        
+                        <Label HeightRequest="150" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Fill" VerticalTextAlignment="Center"
+                               TextColor="White" FontSize="48" Text="{Binding Add, Mode=TwoWay}"/>
+
+                        <Label TextColor="White" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End"
+                               BackgroundColor="Black" Opacity="0.5" Text="{Binding Percentage, Mode=TwoWay}">
+                            <!--<Label.BackgroundColor>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop x:Name="gradientStop1" Color="Black" Opacity="0.0" Offset="0.2"/>
+                                    <GradientStop x:Name="gradientStop2" Color="Black" Opacity="0.5" Offset="0.5"/>
+                                    <GradientStop x:Name="gradientStop3" Color="Black" Opacity="0.0" Offset="0.8"/>
+                                </LinearGradientBrush>
+                            </Label.BackgroundColor>-->
+                        </Label>
+</Grid>

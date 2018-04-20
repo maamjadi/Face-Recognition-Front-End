@@ -18,32 +18,32 @@ namespace FaceRecognitionFrontEnd.iOS
 
         public override void ViewWillAppear(bool animated)
         {
-            //base.ViewWillAppear(animated);
+            base.ViewWillAppear(animated);
 
-            //var LeftNavList = new List<UIBarButtonItem>();
-            //var rightNavList = new List<UIBarButtonItem>();
+            var LeftNavList = new List<UIBarButtonItem>();
+            var rightNavList = new List<UIBarButtonItem>();
 
-            //var navigationItem = this.NavigationController.TopViewController.NavigationItem;
+            var navigationItem = this.NavigationController.TopViewController.NavigationItem;
 
-            //for (var i = 0; i < Element.ToolbarItems.Count; i++)
-            //{
+            for (var i = 0; i < Element.ToolbarItems.Count; i++)
+            {
 
-            //    var ItemPriority = Element.ToolbarItems[i].Priority;
+                var ItemPriority = Element.ToolbarItems[i].Priority;
 
-            //    if (ItemPriority == 1)
-            //    {
-            //        UIBarButtonItem LeftNavItems = navigationItem.RightBarButtonItems[i];
-            //        LeftNavList.Add(LeftNavItems);
-            //    }
-            //    else if (ItemPriority == 0)
-            //    {
-            //        UIBarButtonItem RightNavItems = navigationItem.RightBarButtonItems[i];
-            //        rightNavList.Add(RightNavItems);
-            //    }
-            //}
+                if (ItemPriority == 1)
+                {
+                    UIBarButtonItem LeftNavItems = navigationItem.RightBarButtonItems[i];
+                    LeftNavList.Add(LeftNavItems);
+                }
+                else if (ItemPriority == 0)
+                {
+                    UIBarButtonItem RightNavItems = navigationItem.RightBarButtonItems[i];
+                    rightNavList.Add(RightNavItems);
+                }
+            }
 
-            //navigationItem.SetLeftBarButtonItems(LeftNavList.ToArray(), false);
-            //navigationItem.SetRightBarButtonItems(rightNavList.ToArray(), false);
+            navigationItem.SetLeftBarButtonItems(LeftNavList.ToArray(), false);
+            navigationItem.SetRightBarButtonItems(rightNavList.ToArray(), false);
 
         }
     }

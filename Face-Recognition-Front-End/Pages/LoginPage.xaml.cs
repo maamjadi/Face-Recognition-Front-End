@@ -18,6 +18,7 @@ namespace FaceRecognitionFrontEnd
         }
         async void Login(object sender, EventArgs e)
         {
+            
             //if (!CheckEntries())
             //{
             //    return;
