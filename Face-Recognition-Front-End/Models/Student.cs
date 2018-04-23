@@ -5,12 +5,17 @@ namespace FaceRecognitionFrontEnd
     {
         public string Id { get; set; }
         public string UserName { get; set; }
-        public string Name { get; set; }
-        public string FaceId { get; set; }
-        public string[] SubjectsId { get; set; }
-        public int[] SubjectAttendance { get; set; }
+        public string PhotoURL { get; set; }
+        public SubjectAttendance[] SubjectAttendance { get; set; }
 
         public Student()
+        {
+        }
+    }
+    public class SubjectAttendance{
+        public string SubjectId;
+        public int Attendance;
+        public SubjectAttendance()
         {
         }
     }
