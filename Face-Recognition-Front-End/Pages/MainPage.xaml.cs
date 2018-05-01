@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Xamvvm;
 using Xamarin.Forms;
 using FaceRecognitionFrontEnd.ViewModels;
 
@@ -17,7 +16,7 @@ namespace FaceRecognitionFrontEnd
         }
 
         async void addSubject(object sender, EventArgs e) {
-            await Navigation.PushAsync(new AddSubject());
+            await Navigation.PushAsync(new StudentPage());
         }
     }
 }

@@ -98,15 +98,21 @@ namespace FaceRecognitionFrontEnd.Views
 
             var tapGestureRecognizer = new TapGestureRecognizer
             {
-                Command = Command,
                 CommandParameter = item1,
-                NumberOfTapsRequired = 1
+                NumberOfTapsRequired = 1,
+                Command = new Command(new Action<object>(target))
             };
 
-            buildTile?.GestureRecognizers.Add(tapGestureRecognizer);
+            buildTile.GestureRecognizers.Add(tapGestureRecognizer);
 
 
             return buildTile;
+        }
+
+        private void target(object arg)
+        {
+            App.Current.MainPage = new NavigationPage(new StudentPage());
+            System.Diagnostics.Debug.WriteLine("tapped");
         }
     }
 }

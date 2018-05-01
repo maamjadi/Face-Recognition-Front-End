@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Xamvvm;
 using Xamarin.Forms;
 using System.Linq;
 using System.Threading.Tasks;
-using DLToolkit.Forms.Controls;
 using System.Collections.Generic;
 using System.ComponentModel;
 using FaceRecognitionFrontEnd.Models;
@@ -85,5 +83,10 @@ namespace FaceRecognitionFrontEnd.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        async void addSubject(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new NavigationPage(new StudentPage());
+        }
     }
 }

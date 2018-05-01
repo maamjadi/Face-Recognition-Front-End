@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.MainPage"
-             xmlns:converters="using:FaceRecognitionFrontEnd.Converters"
-             xmlns:vm="using:FaceRecognitionFrontEnd.ViewModels"
-             xmlns:control="using:FaceRecognitionFrontEnd.Views"
-             Title="Subjects">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-        <Color x:Key="SelectedColor">Gray</Color>
-        <Color x:Key="UnselectedColor">Pink</Color>
-        <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
-        <vm:MainPageModel x:Key="mainPageModel" />
-            </ResourceDictionary>
-    </ContentPage.Resources>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Logout" Command="{Binding Logout}" Priority="0" Order="Primary">
-        </ToolbarItem>
-        <ToolbarItem Text="Settings" Command="{Binding Settings}" Priority="1" Order="Primary">
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
-    <ContentPage.Content>
-        <control:GridView HorizontalOptions="FillAndExpand"
-                        Grid.Row="1"
-                        VerticalOptions="FillAndExpand"
-                        RowSpacing="20"
-                        ColumnSpacing="20"
-                        MaxColumns="2"
-                        ItemsSource="{Binding Path=Items}"
-                        CommandParameter="{Binding}"
-                        Command="{Binding addSubject}"
-                        IsClippedToBounds="False">
-        <control:GridView.TileHeight>
-          <OnPlatform x:TypeArguments="x:Single"
-                      iOS="150"
-                      Android="150"
-                      WinPhone="150" />
-        </control:GridView.TileHeight>
-      </control:GridView>
-        <!--<Button Margin="200,200,50,400" Text="Add Subject" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="addSubject" />-->
-        <!--<Frame BorderThickness="3" BorderBrush="Yellow" CornerRadius="10" Padding="2"
-        HorizontalAlignment="Center" VerticnnalAlignment="Center">-->
-       
-        <!--</Frame>-->
-    </ContentPage.Content>
+         xmlns:converters="using:FaceRecognitionFrontEnd.Converters"
+         xmlns:vm="using:FaceRecognitionFrontEnd.ViewModels"
+         xmlns:control="using:FaceRecognitionFrontEnd.Views"
+         Title="Subjects">
+<ContentPage.Resources>
+    <ResourceDictionary>
+    <Color x:Key="SelectedColor">Gray</Color>
+    <Color x:Key="UnselectedColor">Pink</Color>
+    <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
+    <vm:MainPageModel x:Key="mainPageModel" />
+        </ResourceDictionary>
+</ContentPage.Resources>
+<ContentPage.ToolbarItems>
+    <ToolbarItem Text="Logout" Command="{Binding Logout}" Priority="0" Order="Primary">
+    </ToolbarItem>
+    <ToolbarItem Text="Settings" Command="{Binding Settings}" Priority="1" Order="Primary">
+    </ToolbarItem>
+</ContentPage.ToolbarItems>
+<ContentPage.Content>
+        <ScrollView IsVisible="{Binding IsGridviewVisible,Mode=TwoWay}" Grid.Column="1" Grid.Row="1">
+    <control:GridView HorizontalOptions="FillAndExpand"
+                    Grid.Row="1"
+                    VerticalOptions="FillAndExpand"
+                    RowSpacing="20"
+                    ColumnSpacing="20"
+                    MaxColumns="2"
+                    ItemsSource="{Binding Path=Items}"
+                    CommandParameter="{Binding}"
+                    Command="{Binding addSubject}"
+                    IsClippedToBounds="False">
+    <control:GridView.TileHeight>
+      <OnPlatform x:TypeArguments="x:Single"
+                  iOS="150"
+                  Android="150"
+                  WinPhone="150" />
+    </control:GridView.TileHeight>
+  </control:GridView>
+            </ScrollView>
+    <!--<Button Margin="200,200,50,400" Text="Add Subject" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="addSubject" />-->
+    <!--<Frame BorderThickness="3" BorderBrush="Yellow" CornerRadius="10" Padding="2"
+    HorizontalAlignment="Center" VerticnnalAlignment="Center">-->
+   
+    <!--</Frame>-->
+</ContentPage.Content>
 </ContentPage>
