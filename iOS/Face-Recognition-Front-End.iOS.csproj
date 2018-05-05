@@ -145,6 +145,9 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="MainPageRenderer.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profileSample.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.1.444934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.1.444934\build\netstandard1.0\Xamarin.Forms.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.2\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.2\build\netstandard2.0\NETStandard.Library.targets')" />

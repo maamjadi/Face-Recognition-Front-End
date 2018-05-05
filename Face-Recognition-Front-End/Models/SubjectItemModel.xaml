@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.Models.SubjectItemModel"
+      xmlns:converters="using:FaceRecognitionFrontEnd.Converters">
+    <Grid.Resources>
+    <ResourceDictionary>
+    <converters:StringNullOrEmptyConverter x:Key="StringConverter" />
+        </ResourceDictionary>
+</Grid.Resources>
+    <Button HeightRequest="150" HorizontalOptions="Fill" VerticalOptions="Fill"
+                               TextColor="White" Text="{Binding SubjectName, Mode=TwoWay}" BackgroundColor="{StaticResource Button}" FontSize="24" Clicked="studentPage" />
+    <Button HeightRequest="150" HorizontalOptions="Fill" VerticalOptions="Fill"
+                               TextColor="White" Text="{Binding Add, Mode=TwoWay}" FontSize="48" IsVisible="{Binding Add, Converter={StaticResource StringConverter}}" Clicked="addSubject" />
+    <Button HorizontalOptions="Fill" VerticalOptions="End" IsVisible="{Binding Percentage, Converter={StaticResource StringConverter}}"
+                               TextColor="White" BackgroundColor="Black" Opacity="0.5" Text="{Binding Percentage, Mode=TwoWay}" Clicked="studentPage" />
+</Grid>

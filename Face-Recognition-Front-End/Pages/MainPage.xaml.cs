@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Xamvvm;
 using Xamarin.Forms;
+using FaceRecognitionFrontEnd.ViewModels;
 
 namespace FaceRecognitionFrontEnd
 {
@@ -11,10 +11,8 @@ namespace FaceRecognitionFrontEnd
         {
             InitializeComponent();
            System.Diagnostics.Debug.WriteLine(App.teacherId);
-        }
+            BindingContext = new MainPageModel();
 
-        async void addSubject(object sender, EventArgs e) {
-            await Navigation.PushAsync(new AddSubject());
         }
     }
 }

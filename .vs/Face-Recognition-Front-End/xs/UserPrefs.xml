@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{2CB08A94-A8F6-4C24-9CAB-5AF2FA2FB46A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Face-Recognition-Front-End/Models/StudentItemModel.xaml">
+    <Files>
+      <File FileName="Face-Recognition-Front-End/Models/SubjectItemModel.xaml" Line="2" Column="107" />
+      <File FileName="Face-Recognition-Front-End/Models/SubjectItemModel.xaml.cs" Line="10" Column="9" />
+      <File FileName="Face-Recognition-Front-End/Models/StudentItemModel.xaml.cs" Line="54" Column="32" />
+      <File FileName="Face-Recognition-Front-End/ViewModels/StudentPageModel.cs" Line="43" Column="35" />
+      <File FileName="Face-Recognition-Front-End/Models/StudentItemModel.xaml" Line="9" Column="27" />
+      <File FileName="Face-Recognition-Front-End/App.xaml.cs" Line="2" Column="1" />
+      <File FileName="Face-Recognition-Front-End/Views/GridView.xaml.cs" Line="122" Column="10" />
+      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml" Line="3" Column="10" />
+      <File FileName="Face-Recognition-Front-End/Pages/StudentPage.xaml" Line="6" Column="42" />
+      <File FileName="Face-Recognition-Front-End/Pages/StudentPage.xaml.cs" Line="12" Column="35" />
+      <File FileName="Face-Recognition-Front-End/ViewModels/MainPageModel.cs" Line="9" Column="1" />
+      <File FileName="Face-Recognition-Front-End/Pages/MainPage.xaml.cs" Line="4" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Face-Recognition-Front-End.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7CD8C00F-45E2-4409-B43D-12903B47F0D0" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Face-Recognition-Front-End.Droid AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+</Properties>

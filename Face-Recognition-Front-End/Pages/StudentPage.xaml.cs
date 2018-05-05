@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using FaceRecognitionFrontEnd.ViewModels;
 using Xamarin.Forms;
 
 namespace FaceRecognitionFrontEnd
@@ -10,6 +10,7 @@ namespace FaceRecognitionFrontEnd
         public StudentPage()
         {
             InitializeComponent();
+            BindingContext = new StudentPageModel();
         }
         async void addStudent(object sender, EventArgs e)
         {

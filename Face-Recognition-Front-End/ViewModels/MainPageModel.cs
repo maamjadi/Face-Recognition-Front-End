@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Xamvvm;
 using Xamarin.Forms;
 using System.Linq;
 using System.Threading.Tasks;
-using DLToolkit.Forms.Controls;
 using System.Collections.Generic;
 using System.ComponentModel;
 using FaceRecognitionFrontEnd.Models;
@@ -14,8 +12,8 @@ namespace FaceRecognitionFrontEnd.ViewModels
 {
     public class MainPageModel : INotifyPropertyChanged
     {
-        private ObservableCollection<ItemModel> items;
-        public ObservableCollection<ItemModel> Items
+        private ObservableCollection<SubjectItemModel> items;
+        public ObservableCollection<SubjectItemModel> Items
         {
             get { return items;  }
             set
@@ -27,7 +25,7 @@ namespace FaceRecognitionFrontEnd.ViewModels
 
         public MainPageModel() 
         {
-            var list = new ObservableCollection<ItemModel>();
+            var list = new ObservableCollection<SubjectItemModel>();
 
             string[] subjects = {
                 "Client Side Technologies",
@@ -55,7 +53,7 @@ namespace FaceRecognitionFrontEnd.ViewModels
 
             for (int i = 0; i < subjects.Length; i++)
             {
-                var item = new ItemModel()
+                var item = new SubjectItemModel()
                 {
                     SubjectName = subjects[i],
                     Percentage = string.Format("{0}%", percentages[i]),
@@ -69,9 +67,9 @@ namespace FaceRecognitionFrontEnd.ViewModels
             Items = list;
         }
 
-        private ItemModel addCreateNewSubjectBtn()
+        private SubjectItemModel addCreateNewSubjectBtn()
         {
-            var item = new ItemModel()
+            var item = new SubjectItemModel()
             {
                 Add = "+",
             };

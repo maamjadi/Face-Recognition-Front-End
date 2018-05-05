@@ -1,6 +1,5 @@
-﻿using DLToolkit.Forms.Controls;
+﻿
 using Xamarin.Forms;
-using Xamvvm;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
