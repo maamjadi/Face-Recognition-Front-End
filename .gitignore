@@ -38,3 +38,9 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+
+\.vs/
+
+Face-Recognition-Front-End/Face-Recognition-Front-End\.csproj
+
+Face-Recognition-Front-End/packages\.config

@@ -15,6 +15,7 @@ namespace FaceRecognitionFrontEnd
             MainPage = new NavigationPage(new StartPage());
         }
 
+     
         protected override void OnStart()
         {
             // Handle when your app starts
