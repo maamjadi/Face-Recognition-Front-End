@@ -14,9 +14,5 @@ namespace FaceRecognitionFrontEnd
             BindingContext = new MainPageModel();
 
         }
-
-        async void addSubject(object sender, EventArgs e) {
-            await Navigation.PushAsync(new StudentPage());
-        }
     }
 }

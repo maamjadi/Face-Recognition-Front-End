@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.MainPage"
          xmlns:converters="using:FaceRecognitionFrontEnd.Converters"
          xmlns:vm="using:FaceRecognitionFrontEnd.ViewModels"
+         xmlns:mo="using:FaceRecognitionFrontEnd.Models"
          xmlns:control="using:FaceRecognitionFrontEnd.Views"
          Title="Subjects">
 <ContentPage.Resources>
@@ -28,7 +29,8 @@
                     MaxColumns="2"
                     ItemsSource="{Binding Path=Items}"
                     CommandParameter="{Binding}"
-                    Command="{Binding addSubject}"
+                    Command="{Binding studentPage}"
+                    ItemTemplate="{x:Type mo:SubjectItemModel}"
                     IsClippedToBounds="False">
     <control:GridView.TileHeight>
       <OnPlatform x:TypeArguments="x:Single"
@@ -38,10 +40,5 @@
     </control:GridView.TileHeight>
   </control:GridView>
             </ScrollView>
-    <!--<Button Margin="200,200,50,400" Text="Add Subject" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="addSubject" />-->
-    <!--<Frame BorderThickness="3" BorderBrush="Yellow" CornerRadius="10" Padding="2"
-    HorizontalAlignment="Center" VerticnnalAlignment="Center">-->
-   
-    <!--</Frame>-->
 </ContentPage.Content>
 </ContentPage>

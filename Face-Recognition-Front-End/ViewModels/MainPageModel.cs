@@ -83,10 +83,5 @@ namespace FaceRecognitionFrontEnd.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        async void addSubject(object sender, EventArgs e)
-        {
-            App.Current.MainPage = new NavigationPage(new StudentPage());
-        }
     }
 }

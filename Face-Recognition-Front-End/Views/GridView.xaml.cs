@@ -13,14 +13,23 @@ namespace FaceRecognitionFrontEnd.Views
 {
     public partial class GridView : Grid
     {
-        public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create<GridView, object>(p => p.CommandParameter, null);
-        public static readonly BindableProperty CommandProperty = BindableProperty.Create<GridView, ICommand>(p => p.Command, null);
-        public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create<GridView, IEnumerable<object>>(p => p.ItemsSource, null, BindingMode.OneWay, null, (bindable, oldValue, newValue) => { ((GridView)bindable).BuildTiles(newValue); });
+        public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(GridView), null);
+
+        public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(GridView), null);
+
+        public static readonly BindableProperty ItemTemplateProperty = BindableProperty.Create(nameof(ItemTemplate), typeof(Type), typeof(GridView), null);
+
+        public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create(nameof(ItemsSource), typeof(IEnumerable), typeof(GridView)
+                    , null, BindingMode.OneWay, null, (bindable, oldValue, newValue) => { ((GridView)bindable).BuildTiles(newValue as IEnumerable<object>); });
 
         private int _maxColumns = 2;
         private float _tileHeight = 0;
 
-        public Type ItemTemplate { get; set; } = typeof(SubjectItemModel);
+        public Type ItemTemplate
+        {
+            get { return (System.Type)GetValue(ItemTemplateProperty); }
+            set { SetValue(ItemTemplateProperty, value); }
+        }
 
         public GridView()
         {
@@ -109,10 +118,9 @@ namespace FaceRecognitionFrontEnd.Views
             return buildTile;
         }
 
-        private void target(object arg)
+        private void target(object arg2)
         {
-            App.Current.MainPage = new NavigationPage(new StudentPage());
-            System.Diagnostics.Debug.WriteLine("tapped");
+            Command.Execute(arg2);
         }
     }
 }

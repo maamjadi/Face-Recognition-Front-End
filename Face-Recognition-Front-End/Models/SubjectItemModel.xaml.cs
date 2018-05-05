@@ -50,5 +50,15 @@ namespace FaceRecognitionFrontEnd.Models
                 OnPropertyChanged("Add");
             }
         }
+
+        async void addSubject(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddSubject());
+        }
+
+        async void studentPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StudentPage());
+        }
     }
 }

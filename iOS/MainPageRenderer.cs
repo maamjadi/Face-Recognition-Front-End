@@ -25,6 +25,14 @@ namespace FaceRecognitionFrontEnd.iOS
 
             var navigationItem = this.NavigationController.TopViewController.NavigationItem;
 
+            if (navigationItem.LeftBarButtonItems != null) {
+                for (var i = 0; i < navigationItem.LeftBarButtonItems.Length; i++)
+                {
+                    UIBarButtonItem LeftNavItems = navigationItem.LeftBarButtonItems[i];
+                    LeftNavList.Add(LeftNavItems);
+                } 
+            }
+
             for (var i = 0; i < Element.ToolbarItems.Count; i++)
             {
 
@@ -32,8 +40,11 @@ namespace FaceRecognitionFrontEnd.iOS
 
                 if (ItemPriority == 1)
                 {
-                    UIBarButtonItem LeftNavItems = navigationItem.RightBarButtonItems[i];
-                    LeftNavList.Add(LeftNavItems);
+                    if (i < navigationItem.RightBarButtonItems.Length) {
+                        UIBarButtonItem LeftNavItems = navigationItem.RightBarButtonItems[i];
+                        LeftNavList.Add(LeftNavItems);
+                    }
+
                 }
                 else if (ItemPriority == 0)
                 {
