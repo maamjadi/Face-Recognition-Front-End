@@ -53,7 +53,7 @@ namespace FaceRecognitionFrontEnd.Models
 
         async void studentCheck(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new StudentPage());
+            //await Navigation.PushAsync(new StudentPage());
         }
     }
 }
