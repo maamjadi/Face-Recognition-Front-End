@@ -66,6 +66,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Models\StudentItemModel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\SubjectItemModel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -95,7 +103,6 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="utilities\ValidationService.cs" />
-    <Compile Include="MainNavigationPageModel.cs" />
     <Compile Include="Pages\AddSubject.xaml.cs">
       <DependentUpon>AddSubject.xaml</DependentUpon>
     </Compile>
@@ -112,6 +119,17 @@
     <Compile Include="utilities\BlobMan.cs" />
     <Compile Include="utilities\Constant.cs" />
     <Compile Include="utilities\RecMan.cs" />
+    <Compile Include="Converters\StringNullOrEmptyConverter.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Models\StudentItemModel.xaml.cs">
+      <DependentUpon>StudentItemModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubjectItemModel.xaml.cs">
+      <DependentUpon>SubjectItemModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MainPageModel.cs" />
+    <Compile Include="ViewModels\StudentPageModel.cs" />
+    <Compile Include="Views\GridView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MR.Gestures">
@@ -187,6 +205,8 @@
     <Folder Include="utilities\" />
     <Folder Include="Converters\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

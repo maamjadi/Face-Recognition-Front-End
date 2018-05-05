@@ -18,34 +18,46 @@ namespace FaceRecognitionFrontEnd.iOS
 
         public override void ViewWillAppear(bool animated)
         {
-            //base.ViewWillAppear(animated);
+            base.ViewWillAppear(animated);
 
-            //var LeftNavList = new List<UIBarButtonItem>();
-            //var rightNavList = new List<UIBarButtonItem>();
+            var LeftNavList = new List<UIBarButtonItem>();
+            var rightNavList = new List<UIBarButtonItem>();
 
-            //var navigationItem = this.NavigationController.TopViewController.NavigationItem;
+            var navigationItem = this.NavigationController.TopViewController.NavigationItem;
 
-            //for (var i = 0; i < Element.ToolbarItems.Count; i++)
-            //{
+            if (navigationItem.LeftBarButtonItems != null)
+            {
+                for (var i = 0; i < navigationItem.LeftBarButtonItems.Length; i++)
+                {
+                    UIBarButtonItem LeftNavItems = navigationItem.LeftBarButtonItems[i];
+                    LeftNavList.Add(LeftNavItems);
+                }
+            }
 
-            //    var ItemPriority = Element.ToolbarItems[i].Priority;
+            for (var i = 0; i < Element.ToolbarItems.Count; i++)
+            {
 
-            //    if (ItemPriority == 1)
-            //    {
-            //        UIBarButtonItem LeftNavItems = navigationItem.RightBarButtonItems[i];
-            //        LeftNavList.Add(LeftNavItems);
-            //    }
-            //    else if (ItemPriority == 0)
-            //    {
-            //        UIBarButtonItem RightNavItems = navigationItem.RightBarButtonItems[i];
-            //        rightNavList.Add(RightNavItems);
-            //    }
-            //}
+                var ItemPriority = Element.ToolbarItems[i].Priority;
 
-            //navigationItem.SetLeftBarButtonItems(LeftNavList.ToArray(), false);
-            //navigationItem.SetRightBarButtonItems(rightNavList.ToArray(), false);
+                if (ItemPriority == 1)
+                {
+                    if (i < navigationItem.RightBarButtonItems.Length)
+                    {
+                        UIBarButtonItem LeftNavItems = navigationItem.RightBarButtonItems[i];
+                        LeftNavList.Add(LeftNavItems);
+                    }
+
+                }
+                else if (ItemPriority == 0)
+                {
+                    UIBarButtonItem RightNavItems = navigationItem.RightBarButtonItems[i];
+                    rightNavList.Add(RightNavItems);
+                }
+            }
+
+            navigationItem.SetLeftBarButtonItems(LeftNavList.ToArray(), false);
+            navigationItem.SetRightBarButtonItems(rightNavList.ToArray(), false);
 
         }
     }
 }
-

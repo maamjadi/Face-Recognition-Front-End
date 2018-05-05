@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.Models.StudentItemModel"
+      >
+     <Button HeightRequest="100" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White" Clicked="studentCheck"/>
+             <StackLayout Spacing="10" x:Name="layout">
+        <Image Source="{Binding ImageName, Mode=TwoWay}" Aspect="AspectFill"/>
+             <Label TextColor="Black" FontAttributes="Bold" HorizontalOptions="Fill" HorizontalTextAlignment="Center" Text="{Binding NameOfPerson, Mode=TwoWay}"/>
+                <Label TextColor="Black" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" Text="{Binding NameOfPerson, Mode=TwoWay}"/>
+            </StackLayout>
+</Grid>

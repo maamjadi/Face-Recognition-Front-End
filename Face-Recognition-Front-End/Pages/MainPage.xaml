@@ -1,70 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FaceRecognitionFrontEnd.MainPage"
-             xmlns:converters="using:FaceRecognitionFrontEnd.Converters"
-             xmlns:vm="using:FaceRecognitionFrontEnd"
-             Title="Subjects">
-
-   <!-- <Page.Resources>
-    <Color x:Key="SelectedColor">Gray</Color>
-    <Color x:Key="UnselectedColor">Pink</Color>
-    <converters:BoolToColorConverter x:Key="BoolToColorConverter"/> 
-        <vm:MainPageModel x:Key="mainPageModel"/>
-    </Page.Resources>-->
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Logout" Command="{Binding Logout}" Priority="0" Order="Primary"></ToolbarItem>
-        <ToolbarItem Text="Settings" Command="{Binding Settings}" Priority="1" Order="Primary"></ToolbarItem>
-    </ContentPage.ToolbarItems>
-    
-    <ContentPage.Content>
-                    <Button Margin="200,200,50,400" Text="Add Subject" BackgroundColor="{StaticResource Button}" FontSize="20" TextColor="White" FontAttributes="Bold" Clicked="addSubject" />
-                     <!--<Frame BorderThickness="3" BorderBrush="Yellow" CornerRadius="10" Padding="2"
-        HorizontalAlignment="Center" VerticnnalAlignment="Center">-->
-                   <!-- <Grid Padding="20" BindingContext="{Binding Source={StaticResource mainPageModel}}">
-                        
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-            <StackLayout Grid.Row="0"
-               Grid.Column="0"
-               BindingContext="{Binding Path=Items[0]}"
-               Orientation="Vertical"
-               BackgroundColor="{Binding IsSelected,Converter={StaticResource BoolToColorConverter}}">
-
-                        <Label BackgroundColor="#B66A6A" HeightRequest="150" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Fill" VerticalTextAlignment="Center"
-                               TextColor="White" FontSize="24" Text="{Binding SubjectName, Mode=TwoWay}"/>
-                        
-                        <Label HeightRequest="150" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Fill" VerticalTextAlignment="Center"
-                               TextColor="White" FontSize="48" Text="{Binding Add, Mode=TwoWay}"/>
-
-                        <Label TextColor="White" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End"
-                               BackgroundColor="Black" Opacity="0.5" Text="{Binding Percentage, Mode=TwoWay}">-->
-                            <!--<Label.BackgroundColor>
-                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                    <GradientStop x:Name="gradientStop1" Color="Black" Opacity="0.0" Offset="0.2"/>
-                                    <GradientStop x:Name="gradientStop2" Color="Black" Opacity="0.5" Offset="0.5"/>
-                                    <GradientStop x:Name="gradientStop3" Color="Black" Opacity="0.0" Offset="0.8"/>
-                                </LinearGradientBrush>
-                            </Label.BackgroundColor>-->
-                       <!-- </Label>
-                <StackLayout.GestureRecognizers>
-    <TapGestureRecognizer Command="{Binding ToggleCommand}" />
-  </StackLayout.GestureRecognizers>-->
-  <!--Triggers will update background color when update IsSelected-->
-<!--  <StackLayout.Triggers>
-    <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="True">
-      <Setter Property="BackgroundColor" Value="{StaticResource SelectedColor}" />
-    </DataTrigger>
-  </StackLayout.Triggers>
-
-                </StackLayout>
-            
-                    </Grid>-->
-                        <!--</Frame>-->
-        
-    </ContentPage.Content>
+         xmlns:converters="using:FaceRecognitionFrontEnd.Converters"
+         xmlns:vm="using:FaceRecognitionFrontEnd.ViewModels"
+         xmlns:mo="using:FaceRecognitionFrontEnd.Models"
+         xmlns:control="using:FaceRecognitionFrontEnd.Views"
+         Title="Subjects">
+<ContentPage.Resources>
+    <ResourceDictionary>
+    <vm:MainPageModel x:Key="mainPageModel" />
+        </ResourceDictionary>
+</ContentPage.Resources>
+<ContentPage.ToolbarItems>
+    <ToolbarItem Text="Logout" Command="{Binding Logout}" Priority="0" Order="Primary">
+    </ToolbarItem>
+    <ToolbarItem Text="Settings" Command="{Binding Settings}" Priority="1" Order="Primary">
+    </ToolbarItem>
+</ContentPage.ToolbarItems>
+<ContentPage.Content>
+        <ScrollView IsVisible="{Binding IsGridviewVisible,Mode=TwoWay}" Grid.Column="1" Grid.Row="1">
+    <control:GridView HorizontalOptions="FillAndExpand"
+                    Grid.Row="1"
+                    VerticalOptions="FillAndExpand"
+                    RowSpacing="20"
+                    ColumnSpacing="20"
+                    MaxColumns="2"
+                    ItemsSource="{Binding Path=Items}"
+                    CommandParameter="{Binding}"
+                    Command="{Binding studentPage}"
+                    ItemTemplate="{x:Type mo:SubjectItemModel}"
+                    IsClippedToBounds="False">
+    <control:GridView.TileHeight>
+      <OnPlatform x:TypeArguments="x:Single"
+                  iOS="150"
+                  Android="150"
+                  WinPhone="150" />
+    </control:GridView.TileHeight>
+  </control:GridView>
+            </ScrollView>
+</ContentPage.Content>
 </ContentPage>
