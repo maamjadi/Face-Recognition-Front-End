@@ -7,11 +7,18 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.ComponentModel;
 using FaceRecognitionFrontEnd.Models;
+using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace FaceRecognitionFrontEnd.ViewModels
 {
     public class StudentPageModel : ContentPage
     {
+        private List<string> studentsNames = new List<string>();
+        private List<int> allattendances = new List<int>();
+        private List<Student> studentsDB;
+        public const string path = "/subjects/getStudents";
+
 
         private ObservableCollection<StudentItemModel> items;
         public ObservableCollection<StudentItemModel> Items
@@ -38,6 +45,73 @@ namespace FaceRecognitionFrontEnd.ViewModels
 
         public StudentPageModel()
         {
+             //Task.Run(async () => { await getStudentsFromDB(); });
+
+            ShowTheView();
+
+        }
+        async private Task getStudentsFromDB()
+        {
+            //try
+            //{
+
+                var response = await RestClient.Get(path + "/5aeb55c7ac37007780fda3ea");
+                if (response.StatusCode == HttpStatusCode.BadRequest)
+                {
+                    System.Diagnostics.Debug.WriteLine("bad reponse from the backend");
+                    // DisplayErrorAlert("Wrong email or password");
+                    //TODO display an error to the user
+                }
+                else if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var data = await response.Content.ReadAsStringAsync();
+
+                    var results = JObject.Parse(data);
+                    //var obj = JsonConvert.DeserializeObject<dynamic>(data);
+                    //var subjects2 = ((JArray)obj.teacherSubjects)[0].ToObject<Subject>();
+                    //students = subjects2.Students;
+
+                    studentsDB = JObject.Parse(data)["students"].ToObject<List<Student>>();
+                    GetAllStudentsNames();
+                    GetAllStudentsPercentages();
+                    App.Current.MainPage = new NavigationPage(new MainPage());
+               }
+                else
+                {
+                    // DisplayErrorAlert("Something went wrong!");
+                    //TODO display an error to the user
+                }
+            //}
+            //catch (Exception ex)
+            //{
+            //    System.Diagnostics.Debug.WriteLine(ex.Message);
+            //    //TODO display an error to the user
+            //}
+        }
+        private void GetAllStudentsNames()
+        {
+            foreach (var student in studentsDB)
+            {
+                if (student != null)
+                    studentsNames.Add(student.UserName);
+            }
+
+        }
+        private void GetAllStudentsPercentages()
+        {
+            foreach (var student in studentsDB)
+            {
+                allattendances.Add(0);
+            }
+            ShowTheView();
+        }
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+        private void ShowTheView()
+        {
             var list = new ObservableCollection<StudentItemModel>();
 
             title = "Client Side";
@@ -51,6 +125,7 @@ namespace FaceRecognitionFrontEnd.ViewModels
                 "profileSample.png"
             };
 
+            //String[] names = studentsNames.ToArray();
             String[] names = {
                 "Ali",
                 "Amra",
@@ -59,7 +134,7 @@ namespace FaceRecognitionFrontEnd.ViewModels
                 "noredin",
                 "zebi"
             };
-
+            //int[] attendances = allattendances.ToArray();
             int[] attendances = {
                 57,
                 23,
@@ -90,12 +165,7 @@ namespace FaceRecognitionFrontEnd.ViewModels
             }
 
             Items = list;
-        }
 
-        private void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

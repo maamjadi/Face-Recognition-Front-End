@@ -7,11 +7,11 @@
          Title="Subjects">
 <ContentPage.Resources>
     <ResourceDictionary>
-    <vm:MainPageModel x:Key="mainPageModel" />
+   <!-- <vm:MainPageModel x:Key="mainPageModel" />-->
         </ResourceDictionary>
 </ContentPage.Resources>
 <ContentPage.ToolbarItems>
-    <ToolbarItem Text="Logout" Command="{Binding Logout}" Priority="0" Order="Primary">
+    <ToolbarItem Text="Update" Priority="0" Order="Primary">
     </ToolbarItem>
     <ToolbarItem Text="Settings" Command="{Binding Settings}" Priority="1" Order="Primary">
     </ToolbarItem>

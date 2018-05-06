@@ -7,7 +7,7 @@ namespace FaceRecognitionFrontEnd
 {
     public partial class LoginPage : ContentPage
     {
-        public const string path = "/teacher";
+        public const string path = "/teachers";
         public string email { get; set; }
         public string password { get; set; }
 
@@ -18,6 +18,7 @@ namespace FaceRecognitionFrontEnd
         }
         async void Login(object sender, EventArgs e)
         {
+            
             //if (!CheckEntries())
             //{
             //    return;
@@ -25,31 +26,31 @@ namespace FaceRecognitionFrontEnd
             Teacher teacher = new Teacher();
             teacher.Email = email;
             teacher.Password = password;
-            try
-            {
+            //try
+            //{
                 
-                //var response = await RestClient.Post(path + "/login", teacher);
-                //if (response.StatusCode == HttpStatusCode.BadRequest)
-                //{
-                //    DisplayErrorAlert("Wrong email or password");
-                //}
-                //else if (response.StatusCode == HttpStatusCode.OK)
-                //{
-                    //var data = await response.Content.ReadAsStringAsync();
-                    //var teacherId = JObject.Parse(data);
-                    //App.teacherId = teacherId["teacherId"].ToString();
+            //    //var response = await RestClient.Post(path + "/login", teacher);
+            //    //if (response.StatusCode == HttpStatusCode.BadRequest)
+            //    //{
+            //    //    DisplayErrorAlert("Wrong email or password");
+            //    //}
+            //    //else if (response.StatusCode == HttpStatusCode.OK)
+            //    //{
+            //        //var data = await response.Content.ReadAsStringAsync();
+            //        //var teacherId = JObject.Parse(data);
+            //        //App.teacherId = teacherId["teacherId"].ToString();
                     App.Current.MainPage = new NavigationPage(new MainPage());
-                //}
-                //else
-                //{
-                //    DisplayErrorAlert("Something went wrong!");
-                //}
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-                DisplayErrorAlert("Something went wrong!");
-            }
+            //    //}
+            //    //else
+            //    //{
+            //    //    DisplayErrorAlert("Something went wrong!");
+            //    //}
+            //}
+            //catch (Exception ex)
+            //{
+            //    System.Diagnostics.Debug.WriteLine(ex.Message);
+            //    DisplayErrorAlert("Something went wrong!");
+            //}
 
         }
         private bool CheckEntries()
