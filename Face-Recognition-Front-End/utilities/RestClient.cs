@@ -8,7 +8,7 @@ namespace FaceRecognitionFrontEnd
 {
     public class RestClient
     {
-        public static string uri = "http://localhost:3100/api";
+        public static string uri = "http://192.168.0.5:3100/api";
         static HttpClient httpClient = new HttpClient();
         public RestClient()
         {

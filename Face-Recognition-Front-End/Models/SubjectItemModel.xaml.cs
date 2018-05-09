@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using FaceRecognitionFrontEnd.Pages;
 using Xamarin.Forms;
 
 namespace FaceRecognitionFrontEnd.Models
@@ -58,7 +58,7 @@ namespace FaceRecognitionFrontEnd.Models
 
         async void studentPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new StudentPage());
+            await Navigation.PushAsync(new TempStudentPage());
         }
     }
 }

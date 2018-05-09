@@ -62,7 +62,7 @@ namespace FaceRecognitionFrontEnd.ViewModels
                 try
                 {
 
-                    var response = await RestClient.Get(path + "/5aeb5595ac37007780fda3e7");
+                    var response = await RestClient.Get(path + "/"+App.teacherId);
                     if (response.StatusCode == HttpStatusCode.BadRequest)
                     {
                         System.Diagnostics.Debug.WriteLine("bad reponse from the backend");

@@ -2,17 +2,17 @@
 using Xamarin.Forms;
 using Xamvvm;
 using Xamarin.Forms.Xaml;
-
+using FaceRecognitionFrontEnd.utilities;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace FaceRecognitionFrontEnd
 {
     public partial class App : Application
     {
-        public static string teacherId = "";
+        public static string teacherId = "5af22bf476caa89aad2627b1";
         public App()
         {
             InitializeComponent();
-
+           
             MainPage = new NavigationPage(new StartPage());
         }
 

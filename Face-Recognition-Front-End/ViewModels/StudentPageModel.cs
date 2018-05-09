@@ -9,6 +9,8 @@ using System.ComponentModel;
 using FaceRecognitionFrontEnd.Models;
 using System.Net;
 using Newtonsoft.Json.Linq;
+using Plugin.Media;
+using FaceRecognitionFrontEnd.utilities;
 
 namespace FaceRecognitionFrontEnd.ViewModels
 {
@@ -19,6 +21,19 @@ namespace FaceRecognitionFrontEnd.ViewModels
         private List<Student> studentsDB;
         public const string path = "/subjects/getStudents";
 
+        public ICommand Recognize { get; set; }
+        private string recognizedPerson = "Uknown";
+
+
+        public string RecognizedPerson
+        {
+            get { return recognizedPerson; }
+            set
+            {
+                recognizedPerson = value;
+                OnPropertyChanged("RecognizedPerson");
+            }
+        }
 
         private ObservableCollection<StudentItemModel> items;
         public ObservableCollection<StudentItemModel> Items
@@ -48,6 +63,8 @@ namespace FaceRecognitionFrontEnd.ViewModels
              //Task.Run(async () => { await getStudentsFromDB(); });
 
             ShowTheView();
+            Recognize = new Command(RecognizeStudent);
+
 
         }
         async private Task getStudentsFromDB()
@@ -88,6 +105,23 @@ namespace FaceRecognitionFrontEnd.ViewModels
             //    //TODO display an error to the user
             //}
         }
+       async private void RecognizeStudent(){
+
+           
+            //System.Diagnostics.Debug.WriteLine("hi ali");
+
+            var mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            {
+                Directory = "Sample",
+                Name = "test.jpg"
+            });
+            if (mediaFile == null)
+                return;
+            var userName = await RecMan.ExecuteFindSimilarFaceCommandAsync(Constants.GroupId, mediaFile);
+            //TODO show the user name of the recognized student or show unknown
+            RecognizedPerson = userName;
+
+        }
         private void GetAllStudentsNames()
         {
             foreach (var student in studentsDB)
@@ -107,8 +141,7 @@ namespace FaceRecognitionFrontEnd.ViewModels
         }
         private void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         private void ShowTheView()
         {

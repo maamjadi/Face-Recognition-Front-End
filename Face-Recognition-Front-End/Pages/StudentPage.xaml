@@ -5,7 +5,14 @@
          xmlns:mo="using:FaceRecognitionFrontEnd.Models"
          xmlns:control="using:FaceRecognitionFrontEnd.Views"
          Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Recognize" Priority="0" Order="Primary" Command="{Binding Recognize}">
+    </ToolbarItem>
+         <ToolbarItem Text="{Binding RecognizedPerson}" Priority="1" Order="Primary">
+            </ToolbarItem>
+</ContentPage.ToolbarItems>
     <ContentPage.Content>
+        
                              <ScrollView IsVisible="{Binding IsGridviewVisible,Mode=TwoWay}" Grid.Column="1" Grid.Row="1">
     <control:GridView HorizontalOptions="FillAndExpand"
                     Grid.Row="1"
@@ -27,6 +34,6 @@
   </control:GridView>
             </ScrollView>
                       
-
+         
     </ContentPage.Content>
 </ContentPage>

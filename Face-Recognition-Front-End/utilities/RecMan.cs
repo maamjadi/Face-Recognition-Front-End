@@ -22,6 +22,7 @@ namespace FaceRecognitionFrontEnd.utilities
             if (students.Count > 0)
             {
                 var faceServiceClient = new FaceServiceClient(Constants.FaceApiKey, Constants.FaceEndpoint);
+                //faceServiceClient.UpdatePersonGroupAsync()
 
                 // Step 1 - Create Person Group
                 var personGroup = Guid.NewGuid().ToString();
@@ -38,9 +39,38 @@ namespace FaceRecognitionFrontEnd.utilities
 
                 // Step 3 - Train facial recognition model.
                 await faceServiceClient.TrainPersonGroupAsync(personGroupId);
+
+            }
+        }
+        public static async Task AddStudents(List<Student> students, string personGroupId)
+        {
+            if (students.Count > 0)
+            {
+                var faceServiceClient = new FaceServiceClient(Constants.FaceApiKey, Constants.FaceEndpoint);
+                //faceServiceClient.UpdatePersonGroupAsync()
+
+                // Step 2 - Add persons (and faces) to person group.
+                foreach (var student in students)
+                {
+                    // Step 2a - Create a new person, identified by their name.
+                    var p = await faceServiceClient.CreatePersonAsync(personGroupId, student.UserName);
+                    // Step 3a - Add a face for that person.
+                    await faceServiceClient.AddPersonFaceAsync(personGroupId, p.PersonId, student.PhotoURL);
+                }
+
+                // Step 3 - Train facial recognition model.
+                await faceServiceClient.TrainPersonGroupAsync(personGroupId);
             }
         }
 
+        public static async Task DeleteGroup( string personGroupId)
+        {
+          
+                var faceServiceClient = new FaceServiceClient(Constants.FaceApiKey, Constants.FaceEndpoint);
+                //faceServiceClient.UpdatePersonGroupAsync()
+                await faceServiceClient.DeletePersonGroupAsync(personGroupId);
+
+        }
         public static async Task<string> ExecuteFindSimilarFaceCommandAsync(string personGroupId, MediaFile photo)
         {
             var stream = photo.GetStream();

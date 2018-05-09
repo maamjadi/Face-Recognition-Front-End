@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 using Plugin.Media;
 using FaceRecognitionFrontEnd.utilities;
 using Plugin.Media.Abstractions;
+using System.Collections.Generic;
 
 namespace FaceRecognitionFrontEnd
 {
@@ -59,7 +60,11 @@ namespace FaceRecognitionFrontEnd
                         var data = await response.Content.ReadAsStringAsync();
                         var responseId = JObject.Parse(data);
                         var studentId = responseId["studentId"].ToString();
-                        //TODO go back to the student page and give the student id to the array on the subjects
+                        AddSubject.studentsID.Add(studentId);
+                        AddSubject.students.Add(student);
+                        //TODO pop twice to the add subject don't create a new instance
+
+                        App.Current.MainPage = new NavigationPage(new AddSubject());
 
                     }
                     else

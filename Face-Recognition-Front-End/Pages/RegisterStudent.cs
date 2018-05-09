@@ -37,6 +37,8 @@ namespace FaceRecognitionFrontEnd
                     var responseId = JObject.Parse(data);
                     var studentId = responseId["studentId"].ToString();
                     //TODO go back and give the student id to the array on the subjects
+                    AddSubject.studentsID.Add(studentId);
+                    await Navigation.PopAsync();
                 }
                 else
                 {
