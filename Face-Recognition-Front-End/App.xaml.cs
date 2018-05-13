@@ -8,7 +8,7 @@ namespace FaceRecognitionFrontEnd
 {
     public partial class App : Application
     {
-        public static string teacherId = "5af22bf476caa89aad2627b1";
+        public static string teacherId = "";
         public App()
         {
             InitializeComponent();

@@ -21,42 +21,40 @@ namespace FaceRecognitionFrontEnd
         async void Login(object sender, EventArgs e)
         {
             
-            //if (!CheckEntries())
-            //{
-            //    return;
-            //}
+            if (!CheckEntries())
+            {
+                return;
+            }
             Teacher teacher = new Teacher();
             teacher.Email = email;
             teacher.Password = password;
-            //try
-            //{
+            try
+            {
                 
-            //    //var response = await RestClient.Post(path + "/login", teacher);
-            //    //if (response.StatusCode == HttpStatusCode.BadRequest)
-            //    //{
-            //    //    DisplayErrorAlert("Wrong email or password");
-            //    //}
-            //    //else if (response.StatusCode == HttpStatusCode.OK)
-            //    //{
-            //        //var data = await response.Content.ReadAsStringAsync();
-            //        //var teacherId = JObject.Parse(data);
-            //        //App.teacherId = teacherId["teacherId"].ToString();
-            // await RecMan.DeleteGroup("alialsaeedi");
-           // students.Add(new Student { UserName = "Ali", PhotoURL = "https://alialsaeedi19.blob.core.windows.net/recfa/IMG_7802.jpg" });
-
-           // await RecMan.RegisterStudents(students, "alialsaeediNew");
+                var response = await RestClient.Post(path + "/login", teacher);
+                if (response.StatusCode == HttpStatusCode.BadRequest)
+                {
+                    DisplayErrorAlert("Wrong email or password");
+                }
+                else if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var data = await response.Content.ReadAsStringAsync();
+                    var teacherId = JObject.Parse(data);
+                    App.teacherId = teacherId["teacherId"].ToString();
+      
+            await RecMan.RegisterStudents(students, "alialsaeediNew");
                     App.Current.MainPage = new NavigationPage(new MainPage());
-            //    //}
-            //    //else
-            //    //{
-            //    //    DisplayErrorAlert("Something went wrong!");
-            //    //}
-            //}
-            //catch (Exception ex)
-            //{
-            //    System.Diagnostics.Debug.WriteLine(ex.Message);
-            //    DisplayErrorAlert("Something went wrong!");
-            //}
+                }
+                else
+                {
+                    DisplayErrorAlert("Something went wrong!");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                DisplayErrorAlert("Something went wrong!");
+            }
 
         }
         private bool CheckEntries()
