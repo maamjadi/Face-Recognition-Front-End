@@ -27,8 +27,7 @@ namespace FaceRecognitionFrontEnd
             InitializeComponent();
             BindingContext = this;
             //TODO get the students from the other page and replace it with this temp students
-            //students.Add(new Student { UserName = "Ali", PhotoURL = "https://alialsaeedi19.blob.core.windows.net/recfa/IMG_7802.jpg"});
-
+            
 
         }
         async void AddNewSubject(object sender, EventArgs e)
@@ -53,7 +52,7 @@ namespace FaceRecognitionFrontEnd
                     var data = await response.Content.ReadAsStringAsync();
                     var responseJson = JObject.Parse(data);
                     var subjectId = responseJson["subjectId"].ToString();
-                   // await GetStudetnsFromDB(subjectId);
+
                     //For each subject we are creating a list of students 
                     await RecMan.RegisterStudents(students, Constants.GroupId);
                     studentsID.Clear();

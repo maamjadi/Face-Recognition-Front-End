@@ -113,6 +113,10 @@ namespace FaceRecognitionFrontEnd.ViewModels
             }
             ShowTheView();
         }
+
+
+
+
         private void ShowTheView()
         {
             var list = new ObservableCollection<SubjectItemModel>();

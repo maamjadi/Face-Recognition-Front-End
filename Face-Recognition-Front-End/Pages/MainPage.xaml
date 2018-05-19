@@ -17,7 +17,7 @@
     </ToolbarItem>
 </ContentPage.ToolbarItems>
 <ContentPage.Content>
-        <ScrollView IsVisible="{Binding IsGridviewVisible,Mode=TwoWay}" Grid.Column="1" Grid.Row="1">
+        <ScrollView Grid.Column="1" Grid.Row="1">
     <control:GridView HorizontalOptions="FillAndExpand"
                     Grid.Row="1"
                     VerticalOptions="FillAndExpand"

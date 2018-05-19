@@ -8,7 +8,7 @@ namespace FaceRecognitionFrontEnd
 {
     public class RestClient
     {
-        public static string uri = "http://192.168.0.5:3100/api";
+		public static string uri = "http://172.20.10.3:3100/api";
         static HttpClient httpClient = new HttpClient();
         public RestClient()
         {
@@ -36,5 +36,6 @@ namespace FaceRecognitionFrontEnd
             var response = await httpClient.SendAsync(request);
             return response;
         }
+
     }
 }
