@@ -18,6 +18,11 @@ namespace FaceRecognitionFrontEnd
             InitializeComponent();
             BindingContext = this;
         }
+        /// <summary>
+        /// Login the specified sender and e.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         async void Login(object sender, EventArgs e)
         {
             
@@ -57,6 +62,10 @@ namespace FaceRecognitionFrontEnd
             }
 
         }
+        /// <summary>
+        /// Checks the entries.
+        /// </summary>
+        /// <returns><c>true</c>, if entries was checked, <c>false</c> otherwise.</returns>
         private bool CheckEntries()
         {
             if (!ValidationService.CheckEntry(EmailEntry, email) ||
